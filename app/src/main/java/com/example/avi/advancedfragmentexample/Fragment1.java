@@ -3,6 +3,7 @@ package com.example.avi.advancedfragmentexample;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ public class Fragment1 extends Fragment {
                              Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.fragment_fragment1, container, false);
         Button button = (Button) fragmentView.findViewById(R.id.button1);
+
+        Log.d("Avi", "Showing GIT before and after, comparison between 2 commits");
 
         // The fragment delegates the click event, to the activity
         // Because in this specific excercise, we've decided that the button's behavior context related
