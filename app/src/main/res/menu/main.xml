@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_example"
+        android:orderInCategory="100"
+        app:showAsAction = "always"
+        android:title="Action settings"
+        android:icon="@drawable/alert"
+        />
+
+    <item
+        android:id="@+id/setting"
+        android:orderInCategory="101"
+        android:title="Settings" />
+
+    <item
+        android:id="@+id/deleteAll"
+        android:orderInCategory="102"
+        android:title="Delete All Favorites" />
+
+    <item
+        android:id="@+id/quit"
+        android:orderInCategory="103"
+        android:title="Quit" />
+
+
+
+</menu>

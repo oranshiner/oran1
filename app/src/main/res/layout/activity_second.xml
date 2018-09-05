@@ -7,16 +7,18 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.avi.advancedfragmentexample.SecondActivity">
+    tools:context="com.example.oran.MapProject.activities.SecondActivity">
 
     <fragment
+        android:id="@+id/map"
+        android:name="com.example.oran.MapProject.fragments.MyMapFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:name="com.example.avi.advancedfragmentexample.Fragment2"
-        android:id="@+id/fragment"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/fragment2"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
         tools:layout="@layout/fragment_fragment2" />
 
 

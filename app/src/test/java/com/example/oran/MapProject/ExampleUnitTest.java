@@ -1,4 +1,4 @@
-package com.example.avi.advancedfragmentexample;
+package com.example.oran.MapProject;
 
 import org.junit.Test;
 

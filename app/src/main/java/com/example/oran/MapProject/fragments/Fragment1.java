@@ -1,25 +1,32 @@
-package com.example.avi.advancedfragmentexample;
+package com.example.oran.MapProject.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.oran.MapProject.R;
+import com.google.android.gms.maps.model.LatLng;
+
 public class Fragment1 extends Fragment {
 
-    private IExternalActivity parentActivity;
-
+    private IUserActions parentActivity;
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View fragmentView = inflater.inflate(R.layout.fragment_fragment1, container, false);
-        Button button = (Button) fragmentView.findViewById(R.id.button1);
-
-        Log.d("Avi", "Showing GIT before and after, comparison between 2 commits");
+        Button button = (Button) fragmentView.findViewById(R.id.searchButton);
 
         // The fragment delegates the click event, to the activity
         // Because in this specific excercise, we've decided that the button's behavior context related
@@ -27,7 +34,8 @@ public class Fragment1 extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                parentActivity.setTextInTextView();
+                LatLng newLocation = new LatLng(32.109333, 34.855499);
+                parentActivity.onFocusOnLocation(newLocation);
 
             }
         });
@@ -39,17 +47,15 @@ public class Fragment1 extends Fragment {
     // This function is being called after the activity is being created
     public void onAttach(Context context) {
         super.onAttach(context);
-
-
-        if (context instanceof IExternalActivity) {
+        if (context instanceof IUserActions) {
             // If the activity which holds the current fragment, obeys to the rules in the
-            // "contract", defined in the interface ("IExternalActivity"), then we save a
+            // "contract", defined in the interface ("IUserActions"), then we save a
             // reference to the external activity, in order to call it, each time the button
             // had been pressed
-            this.parentActivity = (IExternalActivity) context;
+            this.parentActivity = (IUserActions) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement IExternalActivity");
+                    + " must implement IUserActions");
         }
     }
 
@@ -59,7 +65,7 @@ public class Fragment1 extends Fragment {
         parentActivity = null;
     }
 
-    public interface IExternalActivity {
-        void setTextInTextView();
+    public interface IUserActions {
+        public void onFocusOnLocation(LatLng newLocation);
     }
 }

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.avi.advancedfragmentexample.Fragment2">
+    tools:context="com.example.oran.MapProject.fragments.MyMapFragment">
 
     <fragment
         android:id="@+id/map"
@@ -13,4 +12,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
      />
-</LinearLayout>
+</FrameLayout>
